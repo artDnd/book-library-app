@@ -1,6 +1,6 @@
 import { BsBookmarkStar, BsBookmarkStarFill } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteBook, toggleFavorite } from '../../redux/books/actionCreators'
+import { deleteBook, toggleFavorite } from '../../redux/slices/booksSlice'
 import styles from './BookList.module.scss'
 export function BookList() {
 	const dispatch = useDispatch()

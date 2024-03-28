@@ -1,0 +1,16 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-weight: 600;
+	.input {
+		height: 30px;
+		width: 200px;
+	}
+	> .bookBtn {
+		padding: 10px 30px;
+		margin-top: 20px;
+		background-color: #3c3c3c;
+		font-size: 20px;
+	}
+}

@@ -9,7 +9,7 @@ const booksSlice = createSlice({
 			return [...state, action.payload]
 		},
 		deleteBook: (state, action) => {
-			return state.filter(book => book.id != action.payload)
+			return state.filter(book => book.id !== action.payload)
 		},
 		toggleFavorite: (state, action) => {
 			return state.map(book =>

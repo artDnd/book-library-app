@@ -13,7 +13,7 @@
 		background-color: #fff;
 		font-weight: 500;
 		height: 400px;
-		border-radius: 3px;
+		border-radius: 10px;
 		padding: 10px;
 		display: flex;
 		justify-content: center;
@@ -28,7 +28,7 @@
 			font-size: 28px;
 			font-weight: 600;
 			text-align: center;
-			border-radius: 3px;
+			border-radius: 10px;
 			padding: 10px;
 		}
 		> .app-list {
@@ -36,7 +36,7 @@
 			height: 470px;
 			margin-top: 30px;
 			background-color: #fff;
-			border-radius: 3px;
+			border-radius: 10px;
 			padding: 10px 0;
 			overflow-y: auto;
 		}

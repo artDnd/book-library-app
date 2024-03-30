@@ -29,4 +29,5 @@ export const {
 	setAuthorFilter,
 	setOnlyFavoriteFilter,
 } = filterSlice.actions
+
 export default filterSlice.reducer

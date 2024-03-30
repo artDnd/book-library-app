@@ -9,7 +9,6 @@ export function BookList() {
 	const filterTitle = useSelector(state => state.filter.title)
 	const filterAuthor = useSelector(state => state.filter.author)
 	const onlyFavoriteFilter = useSelector(state => state.filter.onlyFavorite)
-
 	const filteredBooks = books.filter(book => {
 		const matchesTitle = book.title
 			.toLowerCase()
@@ -56,7 +55,8 @@ export function BookList() {
 							<li className={styles.listElement} key={i}>
 								<p>
 									{++i}. {hightlightMatch(book.title, filterTitle)} by{' '}
-									<strong>{hightlightMatch(book.author, filterAuthor)}</strong>
+									<strong>{hightlightMatch(book.author, filterAuthor)}</strong>{' '}
+									({book.source})
 								</p>{' '}
 								<div className={styles.btnBlock}>
 									{book.isFavorite ? (

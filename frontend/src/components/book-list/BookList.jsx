@@ -45,10 +45,10 @@ export function BookList() {
 
 	return (
 		<div className={styles.bookList}>
-			<div className={styles.title}>book list</div>
+			<div className={styles.title}>Book list</div>
 			<ul className={styles.unList}>
 				{books.length === 0 ? (
-					<p>books is chika</p>
+					<p className={styles.unTitle}>Book list is empty</p>
 				) : (
 					filteredBooks.map((book, i) => {
 						return (

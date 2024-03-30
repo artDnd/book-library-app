@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { FaSpinner } from 'react-icons/fa'
 import { useDispatch } from 'react-redux'
 import books from '../../data/books.json'
 import { addBook, fetchBook } from '../../redux/slices/booksSlice'
@@ -9,6 +10,7 @@ import styles from './BookForm.module.scss'
 export function BookForm() {
 	const [title, setTitle] = useState('')
 	const [author, setAuthor] = useState('')
+	const [isLoading, setIsLoading] = useState(false)
 	const dispatch = useDispatch()
 
 	function addRandomBook(e) {
@@ -33,8 +35,13 @@ export function BookForm() {
 		}
 	}
 
-	const handleAddBookViaApi = async () => {
-		dispatch(fetchBook('http://localhost:4000/random-book'))
+	const handleAddRandomBookViaApi = async () => {
+		try {
+			setIsLoading(prev => !prev)
+			await dispatch(fetchBook('http://localhost:4000/random-book-delayed'))
+		} finally {
+			setIsLoading(prev => !prev)
+		}
 	}
 
 	return (
@@ -64,9 +71,17 @@ export function BookForm() {
 			<button
 				className={styles.bookBtn}
 				type='button'
-				onClick={handleAddBookViaApi}
+				onClick={handleAddRandomBookViaApi}
+				disabled={isLoading}
 			>
-				Add random book via API
+				{isLoading ? (
+					<>
+						<span>Loading...</span>
+						<FaSpinner className={styles.spinner} />
+					</>
+				) : (
+					'Add random book via API'
+				)}
 			</button>
 		</form>
 	)

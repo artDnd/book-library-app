@@ -45,7 +45,7 @@ export function BookFilters() {
 				<button className={styles.btn} onClick={handleResetFilter}>
 					RESET FILTER
 				</button>
-				<label>
+				<label className={styles.favorite}>
 					<input
 						onChange={handleOnlyFavoriteFilterChange}
 						className={styles.check}

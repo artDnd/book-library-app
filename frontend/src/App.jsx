@@ -2,6 +2,8 @@ import './App.scss'
 import { BookFilters } from './components/book-filters/BookFilters'
 import { BookForm } from './components/book-form/BookForm'
 import { BookList } from './components/book-list/BookList'
+import { Error } from './components/error/Error'
+
 function App() {
 	return (
 		<div className='app'>
@@ -18,6 +20,7 @@ function App() {
 					</div>
 				</section>
 			</main>
+			<Error />
 		</div>
 	)
 }
